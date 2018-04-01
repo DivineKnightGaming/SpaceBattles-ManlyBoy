@@ -81,7 +81,7 @@ class Manta extends FlxSprite
 			// We counted down to zero, so it's time to shoot a bullet!
 			resetShotClock();
 			FlxG.sound.play(Reg.enemyShootWav);
-			var bullet:FlxSprite = cast(cast(FlxG.state, SpacePlayState).enemyBullets.recycle(), FlxSprite);
+			var bullet:FlxSprite = cast(cast(FlxG.state, PlayState).enemyBullets.recycle(), FlxSprite);
 			bullet.loadGraphic(Reg.enemybullets, true, 8, 8);
 			bullet.reset(x + width / 2 - bullet.width / 2, y+height);
 			bullet.animation.add("fire", [0,1], 4, true);	
@@ -92,62 +92,6 @@ class Manta extends FlxSprite
 		
 		super.update(elapsed);
 	}
-	
-	/*override public function kill():Void
-	{
-		
-		var drop:Int = FlxG.random.intRanged(0, 9);
-		
-		if(drop == 9)
-		{
-			drop = FlxG.random.intRanged(0, 6);
-			switch(drop)
-			{
-				case 0:
-					//drop shield
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).shieldDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 1:
-					//drop shield
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).shieldDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 2:
-					//drop shield
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).shieldDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 3:
-					//drop power
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).powerDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 4:
-					//drop power
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).powerDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 5:
-					//drop power
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).powerDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-				case 6:
-					//drop life
-				
-					var item:FlxSprite = cast(cast(FlxG.state, SpacePlayState).lifeDrops.recycle(), FlxSprite);
-					item.reset(x + width / 2 - item.width / 2, y+height/2);
-					item.velocity.y = 50;
-			}
-		}
-		super.kill();
-	}*/
 	
 	/**
 	 * This function just resets our bullet logic timer to a random value between 1 and 11

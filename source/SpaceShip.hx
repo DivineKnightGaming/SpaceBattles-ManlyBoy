@@ -95,25 +95,25 @@ class SpaceShip extends FlxSprite
 			FlxG.sound.play(Reg.playerShootWav);
 			resetShotClock();
 			
-			if(cast(FlxG.state, SpacePlayState).powers == 0 || cast(FlxG.state, SpacePlayState).powers == 2)
+			if(cast(FlxG.state, PlayState).powers == 0 || cast(FlxG.state, PlayState).powers == 2)
 			{
-				var bullet:FlxSprite = cast(cast(FlxG.state, SpacePlayState).player1Bullets.recycle(), FlxSprite);	
+				var bullet:FlxSprite = cast(cast(FlxG.state, PlayState).player1Bullets.recycle(), FlxSprite);	
 				bullet.loadGraphic(Reg.bullets, true, 8, 8);
 				bullet.animation.add("fire", [0,1], 4, true);	
 				bullet.animation.play("fire");
 				bullet.reset(x + width/2 - bullet.width/2, y-bullet.height);
 				bullet.velocity.y = -200;
 			}
-			if(cast(FlxG.state, SpacePlayState).powers >= 1)
+			if(cast(FlxG.state, PlayState).powers >= 1)
 			{
-				var bullet:FlxSprite = cast(cast(FlxG.state, SpacePlayState).player1Bullets.recycle(), FlxSprite);	
+				var bullet:FlxSprite = cast(cast(FlxG.state, PlayState).player1Bullets.recycle(), FlxSprite);	
 				bullet.loadGraphic(Reg.bullets, true, 8, 8);
 				bullet.animation.add("fire", [0,1], 4, true);	
 				bullet.animation.play("fire");
 				bullet.reset(x - bullet.width/2, y-bullet.height);
 				bullet.velocity.y = -200;
 				
-				var bullet:FlxSprite = cast(cast(FlxG.state, SpacePlayState).player1Bullets.recycle(), FlxSprite);	
+				var bullet:FlxSprite = cast(cast(FlxG.state, PlayState).player1Bullets.recycle(), FlxSprite);	
 				bullet.loadGraphic(Reg.bullets, true, 8, 8);
 				bullet.animation.add("fire", [0,1], 4, true);	
 				bullet.animation.play("fire");

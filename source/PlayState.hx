@@ -29,7 +29,7 @@ import flash.system.System;
 
 import flixel.addons.display.FlxExtendedSprite;
 
-class SpacePlayState extends FlxState
+class PlayState extends FlxState
 {
     private var state:UInt = 1;
     private var starField:StarField;
